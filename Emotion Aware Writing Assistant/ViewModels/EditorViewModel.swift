@@ -30,13 +30,19 @@ final class EditorViewModel: ObservableObject {
         guard !text.isEmpty else { return }
 
         isLoading = true
-        let rewritten = await rewriteService.rewrite(
-            text: text,
-            targetEmotion: emotion
-        )
-        self.text = rewritten
-        isLoading = false
+        defer { isLoading = false }
+
+        do {
+            let rewritten = try await rewriteService.rewrite(
+                text: text,
+                targetEmotion: emotion
+            )
+            self.text = rewritten
+        } catch {
+            print("Rewrite error:", error)
+        }
     }
+
 
 }
 

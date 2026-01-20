@@ -15,7 +15,6 @@
 		BE1C6ACA2F1EF86700565244 /* Emotion_Aware_Writing_AssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C6AC92F1EF86700565244 /* Emotion_Aware_Writing_AssistantUITests.swift */; };
 		BE1C6ACC2F1EF86700565244 /* Emotion_Aware_Writing_AssistantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C6ACB2F1EF86700565244 /* Emotion_Aware_Writing_AssistantUITestsLaunchTests.swift */; };
 		BE1C6AE32F1EFA4500565244 /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C6AE22F1EFA4500565244 /* EditorViewModel.swift */; };
-		BE1C6AE52F1EFAA800565244 /* EmotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C6AE42F1EFAA800565244 /* EmotionService.swift */; };
 		BE1C6AE72F1EFCDA00565244 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C6AE62F1EFCDA00565244 /* EditorView.swift */; };
 		BE1C6AE92F1EFED500565244 /* EmotionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C6AE82F1EFED500565244 /* EmotionResult.swift */; };
 		BE1C6AEC2F1F00B000565244 /* OpenAIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C6AEB2F1F00B000565244 /* OpenAIModels.swift */; };
@@ -54,17 +53,16 @@
 		BE1C6AC92F1EF86700565244 /* Emotion_Aware_Writing_AssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion_Aware_Writing_AssistantUITests.swift; sourceTree = "<group>"; };
 		BE1C6ACB2F1EF86700565244 /* Emotion_Aware_Writing_AssistantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion_Aware_Writing_AssistantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BE1C6AE22F1EFA4500565244 /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
-		BE1C6AE42F1EFAA800565244 /* EmotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionService.swift; sourceTree = "<group>"; };
 		BE1C6AE62F1EFCDA00565244 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		BE1C6AE82F1EFED500565244 /* EmotionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResult.swift; sourceTree = "<group>"; };
 		BE1C6AEB2F1F00B000565244 /* OpenAIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIModels.swift; sourceTree = "<group>"; };
-		BE1C6AED2F1F2D2100565244 /* EmotionAwareSecrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EmotionAwareSecrets.xcconfig; sourceTree = "<group>"; };
 		BE1C6AF02F1F2DC000565244 /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 		BE1C6AF12F1F337D00565244 /* Emotion-Aware-Writing-Assistant-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Emotion-Aware-Writing-Assistant-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BE1C6AF22F1F3CF500565244 /* HFEmotionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HFEmotionResponse.swift; sourceTree = "<group>"; };
 		BE1C6AF42F1F3D0F00565244 /* HuggingFaceEmotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingFaceEmotionService.swift; sourceTree = "<group>"; };
 		BE1C6AF62F1F3E8100565244 /* HFErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HFErrorResponse.swift; sourceTree = "<group>"; };
 		BE1C6AF82F1F400C00565244 /* OpenAIRewriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIRewriteService.swift; sourceTree = "<group>"; };
+		BE1C6AFA2F1F490700565244 /* EmotionAwareSecrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EmotionAwareSecrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,8 @@
 		BE1C6AA22F1EF86500565244 = {
 			isa = PBXGroup;
 			children = (
-				BE1C6AED2F1F2D2100565244 /* EmotionAwareSecrets.xcconfig */,
+				BE1C6AF02F1F2DC000565244 /* .gitignore.md */,
+				BE1C6AFA2F1F490700565244 /* EmotionAwareSecrets.xcconfig */,
 				BE1C6AAD2F1EF86500565244 /* Emotion Aware Writing Assistant */,
 				BE1C6ABE2F1EF86700565244 /* Emotion Aware Writing AssistantTests */,
 				BE1C6AC82F1EF86700565244 /* Emotion Aware Writing AssistantUITests */,
@@ -126,7 +125,6 @@
 				BE1C6AB02F1EF86500565244 /* ContentView.swift */,
 				BE1C6AB22F1EF86600565244 /* Assets.xcassets */,
 				BE1C6AB42F1EF86600565244 /* Preview Content */,
-				BE1C6AF02F1F2DC000565244 /* .gitignore.md */,
 			);
 			path = "Emotion Aware Writing Assistant";
 			sourceTree = "<group>";
@@ -175,7 +173,6 @@
 		BE1C6ADB2F1EF8F500565244 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BE1C6AE42F1EFAA800565244 /* EmotionService.swift */,
 				BE1C6AEB2F1F00B000565244 /* OpenAIModels.swift */,
 				BE1C6AF42F1F3D0F00565244 /* HuggingFaceEmotionService.swift */,
 				BE1C6AF82F1F400C00565244 /* OpenAIRewriteService.swift */,
@@ -330,7 +327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1C6AE52F1EFAA800565244 /* EmotionService.swift in Sources */,
 				BE1C6AB12F1EF86500565244 /* ContentView.swift in Sources */,
 				BE1C6AF32F1F3CF500565244 /* HFEmotionResponse.swift in Sources */,
 				BE1C6AF92F1F400C00565244 /* OpenAIRewriteService.swift in Sources */,
@@ -379,10 +375,10 @@
 /* Begin XCBuildConfiguration section */
 		BE1C6ACD2F1EF86700565244 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1C6AFA2F1F490700565244 /* EmotionAwareSecrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BASE_CONFIGURATION = "EmotionAwareSecrets.xcconfig\n";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -412,7 +408,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				Configuration = "EmotionAwareSecrets.xcconfig\n";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -444,10 +439,10 @@
 		};
 		BE1C6ACE2F1EF86700565244 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1C6AFA2F1F490700565244 /* EmotionAwareSecrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BASE_CONFIGURATION = "EmotionAwareSecrets.xcconfig\n";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -477,7 +472,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				Configuration = "EmotionAwareSecrets.xcconfig\n";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -502,10 +496,10 @@
 		};
 		BE1C6AD02F1EF86700565244 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1C6AFA2F1F490700565244 /* EmotionAwareSecrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_CONFIGURATION = "EmotionAwareSecrets.xcconfig\n";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Emotion Aware Writing Assistant/Preview Content\"";
@@ -532,10 +526,10 @@
 		};
 		BE1C6AD12F1EF86700565244 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1C6AFA2F1F490700565244 /* EmotionAwareSecrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_CONFIGURATION = "EmotionAwareSecrets.xcconfig\n";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Emotion Aware Writing Assistant/Preview Content\"";

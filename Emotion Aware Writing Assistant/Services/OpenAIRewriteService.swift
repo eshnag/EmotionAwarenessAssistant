@@ -16,44 +16,52 @@ final class OpenAIRewriteService {
         return key
     }()
 
-    private let endpoint = "https://api.openai.com/v1/chat/completions"
+    private let endpoint = "https://api.openai.com/v1/responses"
 
-    func rewrite(text: String, targetEmotion: String) async -> String {
-        let prompt = """
-        Rewrite the following text to sound more \(targetEmotion.lowercased()).
-        Preserve the original meaning.
-        Do not add explanations.
+    func rewrite(text: String, targetEmotion: String) async throws -> String {
 
-        Text:
-        \(text)
-        """
+        let body = OpenAIResponsesRequest(
+            model: "gpt-4o-mini",
+            input: """
+            Rewrite the following text so that it clearly conveys the emotion: \(targetEmotion).
 
-        let requestBody: [String: Any] = [
-            "model": "gpt-4o-mini",
-            "messages": [
-                ["role": "system", "content": "You are a helpful writing assistant."],
-                ["role": "user", "content": prompt]
-            ],
-            "temperature": 0.7
-        ]
+            Keep the meaning the same, but adjust tone, wording, and style.
+
+            Text:
+            \(text)
+            """
+        )
 
         var request = URLRequest(url: URL(string: endpoint)!)
         request.httpMethod = "POST"
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
+        request.httpBody = try JSONEncoder().encode(body)
 
-        do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
 
-            let decoded = try JSONDecoder().decode(OpenAIResponse.self, from: data)
-            return decoded.choices.first?.message.content
-                .trimmingCharacters(in: .whitespacesAndNewlines)
-                ?? text
-
-        } catch {
-            print("Rewrite error:", error)
-            return text
+        if let http = response as? HTTPURLResponse, http.statusCode != 200 {
+            print("OpenAI HTTP:", http.statusCode)
+            print(String(data: data, encoding: .utf8) ?? "")
+            throw URLError(.badServerResponse)
         }
+
+        let decoded = try JSONDecoder().decode(OpenAIResponsesResponse.self, from: data)
+
+        if let directText = decoded.output_text {
+            return directText
+        }
+
+        if let output = decoded.output {
+            return output
+                .flatMap { $0.content }
+                .first(where: { $0.type == "output_text" })?
+                .text ?? text
+        }
+
+        return text
     }
+
+
+
 }
